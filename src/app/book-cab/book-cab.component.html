@@ -1,0 +1,11 @@
+<p>to book cab please press the button</p>
+<button (click)="bookCab(userCordinates, driverCordinates)">Book Cab</button>
+
+<div *ngIf="(status$ |async) == 'active'">
+    <p>Booking Confirmed</p>
+    <app-trip></app-trip>
+</div>
+
+<div *ngIf="(status$ |async) == 'disable'">
+    <p>Booking not confirmed. No driver is in {{maxAllowedDistance}} km</p>
+</div>
